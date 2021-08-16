@@ -70,6 +70,9 @@ with open("draft.csv", mode="w") as file:
     file.write(data)
 print(draft_frame.head())
 
+# check for players with no data added. Used to find name differences between wikipedia and basketball reference
+# and make clean dictionary.  Since we're using clean_draft_dict it currently it prints players who never played in the NBA.
+# RIP Len Bias.
 print(clean_draft_dict)
 for key in clean_draft_dict:
     if clean_draft_dict[key]["years played"] == 0:
